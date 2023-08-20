@@ -1,7 +1,6 @@
 import React from 'react';
 import Nav from './components/Nav';
 import ActionNameButton from './components/BookComponent/ActionNameButton';
-import Percentage from './components/BookComponent/Percentage';
 import style from './BookPage.module.css';
 import AddBook from './components/BookComponent/AddBook';
 
@@ -16,7 +15,6 @@ function BookPage() {
             gameName="Sokudo"
             category="Moon"
           />
-          <Percentage />
         </div>
       </div>
       <AddBook />
