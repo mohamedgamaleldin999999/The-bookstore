@@ -1,3 +1,4 @@
+/* eslint-disable no-fallthrough */
 // Actions
 const Actions = [
   { ADD: 'bookstore/book/ADD' },
