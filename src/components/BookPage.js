@@ -5,7 +5,7 @@ import Percentage from './BookComponent/Percentage';
 import style from './BookPage.module.css';
 import EachBook from './BookComponent/eachBook';
 import AddBook from './BookComponent/AddBook';
-import { booksFromAPI } from './redux/books/books';
+import { booksFromAPI } from '../redux/books/bookslice';
 
 function BookPage() {
   const books = useSelector((state) => state.Books, shallowEqual);
