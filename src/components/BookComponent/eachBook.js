@@ -12,26 +12,28 @@ function EachBook(props) {
   const dispatch = useDispatch();
   return (
     <div className={style.leftBody}>
-      <ul>
-        <li>{category}</li>
-        <li>{title}</li>
-        <li>{author}</li>
-      </ul>
-
-      <div className={style.button}>
-        <button type="button">Comments</button>
-        <button type="button" onClick={() => dispatch(removeBook(id))}>Remove</button>
-        <button type="button">Edit</button>
+      <div className={style.ulBody}>
+        <ul>
+          <li className={style.category}>{category}</li>
+          <li className={style.title}>{title}</li>
+          <li className={style.author}>{author}</li>
+        </ul>
+        <div className={style.button}>
+          <button type="button">Comments</button>
+          |
+          <button type="button" onClick={() => dispatch(RemoveBook(id))}>Remove</button>
+          |
+          <button type="button">Edit</button>
+        </div>
       </div>
+      <Percentage />
     </div>
   );
 }
-
 EachBook.propTypes = {
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   id: PropTypes.string.isRequired,
 };
-
 export default EachBook;
