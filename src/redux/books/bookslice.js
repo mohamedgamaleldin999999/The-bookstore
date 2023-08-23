@@ -1,5 +1,7 @@
 /* eslint-disable no-fallthrough */
 // Actions
+import { v4 as uuidv4 } from 'uuid';
+
 const Actions = [
   { ADD: 'bookstore/book/ADD' },
   { REMOVE: 'bookstore/book/REMOVE' },

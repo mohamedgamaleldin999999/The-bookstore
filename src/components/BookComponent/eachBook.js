@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import style from './ActionNameButton.module.css';
-import { RemoveBook } from '../../redux/books/books';
+import { RemoveBook } from '../../redux/books/bookslice';
 
 function EachBook(props) {
   const {
