@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import style from './eachBook.module.css';
 import { removeBook } from '../../redux/books/bookslice';
+import Percentage from './Percentage';
 
 function EachBook(props) {
   const {
