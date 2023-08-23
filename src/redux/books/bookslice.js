@@ -37,15 +37,12 @@ const booksSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(booksFromAPI.fulfilled, (state, action) => {
-        return [...action.payload];
-      })
+      .addCase(booksFromAPI.fulfilled, (state, action) => [...action.payload])
       .addCase(addBook.fulfilled, (state, action) => {
         state.push(action.payload);
       })
-      .addCase(removeBook.fulfilled, (state, action) => {
-        return state.filter((book) => book.item_id !== action.payload);
-      });
+      .addCase(removeBook.fulfilled, (state, action) => state.filter((book) =>
+        book.item_id !== action.payload));
   },
 });
 
