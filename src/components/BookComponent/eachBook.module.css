@@ -36,11 +36,11 @@
 
 .title {
   width: 12.313rem;
-  height: 1.813rem;
   font-family: RobotoSlab, Montserrat, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 1.775rem;
   font-weight: bold;
   color: black;
+  padding: 5px 0;
 }
 
 .author {
@@ -48,8 +48,9 @@
   height: 1.188rem;
   font-family: RobotoSlab, Montserrat, 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 0.875rem;
-  font-weight: 400;
-  color: #379cf6;
+  font-weight: 800;
+  color: #2475bc;
+  padding: 5px;
 }
 
 .button {
@@ -65,7 +66,7 @@
   font-weight: 400;
   letter-spacing: normal;
   cursor: pointer;
-  color: #379cf6;
+  color: #2870cd;
   border: none;
   background-color: transparent;
 }
