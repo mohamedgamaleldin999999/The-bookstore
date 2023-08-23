@@ -24,11 +24,11 @@
 - [📝 License](#license)
 
 # about project
-# 📖 [Math-Magicians] <a name="Math-Magicians"></a>
+# 📖 [Bookstore] <a name="Bookstore"></a>
 
 
 
-**[Math-Magicians]** is a website that serves as a showcase of my skills, achievements, and experiences to potential employers, clients, or collaborators. It allows the user to add and fetch scores from APIs.
+**[Bookstore]** is a website that serves as a showcase of my skills, achievements, and experiences to potential employers, clients, or collaborators. It allows the user to add and fetch scores from APIs.
 
 # built-with
  <a name="built-with"></a>
@@ -38,8 +38,6 @@ Visual Studio Code using HTML, Css, JavaScript, React, and Redux.
  <a name="tech-stack"></a>
 
 <details>
-
-  <summary>Hello Microverse</summary>
   <ul>
     <li><a href="https://html.com/">HTML</a></li>
     <li><a href="https://css.com/">CSS</a><li>
