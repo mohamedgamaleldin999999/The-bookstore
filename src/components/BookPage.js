@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import Nav from './Nav';
-import Percentage from './BookComponent/Percentage';
 import style from './BookPage.module.css';
 import EachBook from './BookComponent/eachBook';
 import AddBook from './BookComponent/AddBook';
@@ -14,7 +13,7 @@ function BookPage() {
     dispatch(booksFromAPI());
   }, []);
   return (
-    <>
+    <div style={{ border: 'solid 3px #e8e8e8', height: '100vh' }}>
       <Nav />
       <div className={style.body}>
         <div className={style.action}>
@@ -28,11 +27,11 @@ function BookPage() {
               category={book.category}
             />
           ))}
-          <Percentage />
         </div>
       </div>
       <AddBook />
-    </>
+    </div>
   );
 }
+
 export default BookPage;
