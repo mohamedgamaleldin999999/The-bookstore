@@ -21,7 +21,7 @@ function EachBook(props) {
         <div className={style.button}>
           <button type="button">Comments</button>
           |
-          <button type="button" onClick={() => dispatch(RemoveBook(id))}>Remove</button>
+          <button type="button" onClick={() => dispatch(removeBook(id))}>Remove</button>
           |
           <button type="button">Edit</button>
         </div>
