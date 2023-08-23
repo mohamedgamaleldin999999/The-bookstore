@@ -9,24 +9,22 @@ function AddBookForm() {
     title: '',
     category: '',
     author: '',
-    id: '',
+    item_id: '',
   });
 
   // Changing state
   const changeFunc = (e) => {
     const [name, value] = [e.target.name, e.target.value];
     if (value.trim() === '') e.target.value = '';
-
     setSingleBook((previous) => ({
       ...previous,
       [name]: value.trim(),
     }));
   };
-
   // submit
   const submitForm = (e) => {
     e.preventDefault();
-    dispatch(AddBook({ ...singleBook, id: uuidv4() }));
+    dispatch(AddBook({ ...singleBook, item_id: uuidv4() }));
     document.querySelector('.form-input').reset();
   };
   return (
@@ -41,11 +39,9 @@ function AddBookForm() {
           <option value="Science Fiction">Science Fiction</option>
           <option value="Economy">Economy</option>
         </select>
-
         <input type="submit" value="ADD BOOK" />
       </form>
     </div>
   );
 }
-
 export default AddBookForm;
