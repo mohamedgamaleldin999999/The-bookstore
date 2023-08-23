@@ -1,52 +1,49 @@
-/* eslint-disable no-fallthrough */
-// Actions
-import { v4 as uuidv4 } from 'uuid';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { deleteBook, bookEndPoint } from '../../components/API';
 
-const Actions = [
-  { ADD: 'bookstore/book/ADD' },
-  { REMOVE: 'bookstore/book/REMOVE' },
-];
-// state initialized as array
+const initialState = [];
 
-const initialState = [
-  {
-    id: uuidv4(),
-    title: 'The First Game',
-    author: 'Suarez',
-    topic: 'Actions',
-    category: 'Economy',
-  },
-  {
-    id: uuidv4(),
-    title: 'The Second Science',
-    author: 'Daniel',
-    topic: 'Actions',
-    category: 'Science Fiction',
-  },
-  {
-    id: uuidv4(),
-    title: 'The Third Play',
-    author: 'Jimmy',
-    topic: 'Actions',
-    category: 'Action',
-  },
-];
-
-// Reducer
-const reducer = (state = initialState, action) => {
-  const { payLoad } = action;
-  switch (action.type) {
-    case Actions[0].ADD:
-      return [...state, payLoad.book];
-
-    case Actions[1].REMOVE:
-      return state.filter((book) => book.id !== payLoad.id);
-
-    default:
-      return state;
+export const booksFromAPI = createAsyncThunk('bookstore/booksFromAPI', async () => {
+  const response = await axios.get(bookEndPoint());
+  if (response.status === 200) {
+    return Object.keys(response.data).map((valu) => ({
+      item_id: valu,
+      ...response.data[valu][0],
+    }));
   }
-};
-// The Action   Creators
-export const AddBook = (book) => ({ type: Actions[0].ADD, payLoad: { book } });
-export const RemoveBook = (id) => ({ type: Actions[1].REMOVE, payLoad: { id } });
-export default reducer;
+  throw new Error('Failed to fetch books');
+});
+
+export const addBook = createAsyncThunk('bookstore/addBook', async (book) => {
+  const response = await axios.post(bookEndPoint(), book);
+  if (response.status === 201) {
+    return book;
+  }
+  throw new Error('Book save was unsuccessful');
+});
+
+export const removeBook = createAsyncThunk('bookstore/removeBook', async (id) => {
+  const response = await axios.delete(deleteBook(id));
+  if (response.status === 201) {
+    return id;
+  }
+  throw new Error('Book not deleted');
+});
+
+const booksSlice = createSlice({
+  name: 'books',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(booksFromAPI.fulfilled, (state, action) => [...action.payload])
+      .addCase(addBook.fulfilled, (state, action) => {
+        state.push(action.payload);
+      })
+      .addCase(removeBook.fulfilled,
+        (state, action) => state.filter((book) => book.item_id !== action.payload));
+  },
+});
+
+export default booksSlice.reducer;

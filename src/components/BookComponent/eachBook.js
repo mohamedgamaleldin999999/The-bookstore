@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import style from './ActionNameButton.module.css';
-import { RemoveBook } from '../../redux/books/bookslice';
+import { removeBook } from '../../redux/books/bookslice';
 
 function EachBook(props) {
   const {
@@ -19,7 +19,7 @@ function EachBook(props) {
 
       <div className={style.button}>
         <button type="button">Comments</button>
-        <button type="button" onClick={() => dispatch(RemoveBook(id))}>Remove</button>
+        <button type="button" onClick={() => dispatch(removeBook(id))}>Remove</button>
         <button type="button">Edit</button>
       </div>
     </div>
