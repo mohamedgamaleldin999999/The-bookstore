@@ -40,9 +40,9 @@ Visual Studio Code using HTML, Css, JavaScript, React, and Redux.
 <details>
   <ul>
     <li><a href="https://html.com/">HTML</a></li>
-    <li><a href="https://css.com/">CSS</a><li>
+    <li><a href="https://css.com/">CSS</a></li>
     <li><a href="https://www.javascript.com/">JavaScript</a></li>
-    <li><a href="https://react.dev/">React</a><li>
+    <li><a href="https://react.dev/">React</a></li>
   </ul>
 </details>
 
