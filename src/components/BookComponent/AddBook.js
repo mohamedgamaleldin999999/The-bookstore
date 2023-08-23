@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
-import { AddBook } from '../../redux/books/bookslice';
+import { addBook } from '../../redux/books/bookslice';
 
 function AddBookForm() {
   const dispatch = useDispatch();
@@ -24,7 +24,7 @@ function AddBookForm() {
   // submit
   const submitForm = (e) => {
     e.preventDefault();
-    dispatch(AddBook({ ...singleBook, item_id: uuidv4() }));
+    dispatch(addBook({ ...singleBook, item_id: uuidv4() }));
     document.querySelector('.form-input').reset();
   };
   return (
