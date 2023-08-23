@@ -9,6 +9,10 @@ import { booksFromAPI } from './redux/books/books';
 
 function BookPage() {
   const books = useSelector((state) => state.Books, shallowEqual);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(booksFromAPI());
+  }, []);
   return (
     <>
       <Nav />
@@ -19,12 +23,11 @@ function BookPage() {
               topic={book.topic}
               author={book.author}
               title={book.title}
-              key={book.id}
-              id={book.id}
+              key={book.item_id}
+              id={book.item_id}
               category={book.category}
             />
           ))}
-
           <Percentage />
         </div>
       </div>
