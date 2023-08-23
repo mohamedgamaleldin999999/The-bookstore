@@ -71,7 +71,7 @@ In order to run this project you need: to dowload it or clone it to your machine
 
 1- Clone the repository to your local machine using the following command:
 
-git clone https://github.com/mohamedgamaleldin999999/bookstore
+git clone https://github.com/mohamedgamaleldin999999/The-bookstore
 
 2- Change into the project directory:
 
