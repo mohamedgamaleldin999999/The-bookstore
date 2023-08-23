@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSelector, shallowEqual } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import Nav from './components/Nav';
 import Percentage from './components/BookComponent/Percentage';
 import style from './BookPage.module.css';
