@@ -14,7 +14,7 @@ function Nav() {
               to="/"
               className={(Link) => (Link.isActive ? style.activeClass : '')}
             >
-              Books
+              BOOKS
             </NavLink>
           </li>
           <li>
@@ -22,7 +22,7 @@ function Nav() {
               to="/categories"
               className={(Link) => (Link.isActive ? style.activeClass : '')}
             >
-              Categories
+              CATEGORIES
             </NavLink>
           </li>
         </ul>
