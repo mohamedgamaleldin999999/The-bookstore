@@ -16,7 +16,7 @@
 .com {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   color: #121212;
 }
@@ -30,6 +30,8 @@
   line-height: normal;
   letter-spacing: normal;
   color: #121212;
+  text-align: left;
+  width: 100%;
 }
 
 .isCom {
