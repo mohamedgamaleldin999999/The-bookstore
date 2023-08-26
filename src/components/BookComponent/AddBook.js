@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../../redux/books/bookslice';
+import styles from './AddBook.module.css';
 
 function AddBookForm() {
   const dispatch = useDispatch();
@@ -28,7 +29,7 @@ function AddBookForm() {
     document.querySelector('.form-input').reset();
   };
   return (
-    <div>
+    <div className={styles.container}>
       <h1>ADD NEW BOOK</h1>
       <form name="addBook" onSubmit={submitForm} className="form-input">
         <input type="text" name="title" placeholder="Book title" onChange={changeFunc} required />
@@ -39,7 +40,7 @@ function AddBookForm() {
           <option value="Science Fiction">Science Fiction</option>
           <option value="Economy">Economy</option>
         </select>
-        <input type="submit" value="ADD BOOK" />
+        <input className={styles.butt} type="submit" value="ADD BOOK" />
       </form>
     </div>
   );
